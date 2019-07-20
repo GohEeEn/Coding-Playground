@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>JavaScript App 2 : Simple Clock</title>
+
+        <style>
+            button{ margin: 5px; }
+            .container{ text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div id="model-1" class="container">
+            <!-- Partition that stores the timer display and buttons to stop or start it -->
+            <div id="timer"></div>
+
+            <!-- Buttons for different purposes -->
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="stopTimer2()"># Stop</button>
+        </div>
+
+        <script>
+            var interval = setInterval(function(){ timer() }, 1000);
+            var specialButton = document.getElementsByTagName("button")[2];
+
+            // Function to display the current time as a string
+            function timer(){
+                var date = new Date();
+                var time = date.toLocaleTimeString();
+                document.getElementById("timer").innerHTML = time;
+            }
+
+            // Function to start or restart the timer() function executing
+            // with setInterval() function to refresh the new time in every 1000 mili-seconds
+            function startTimer(){
+                interval = setInterval(function(){ timer() }, 1000);
+            }
+
+            // Function to stop the continuous execution of timer() function by clearInterval
+            function stopTimer(){
+                clearInterval(interval);
+            }
+
+            function startTimer2(){              
+                interval = setInterval(function(){ timer() }, 1000);
+                
+                // Respond to the button clicking, to change the content of it
+                specialButton.innerHTML = "# Stop";
+
+                // Change the responsive function called after triggering the button-clicking
+                // By setAttribute() method to change the new attribute value of that button
+                specialButton.setAttribute("onclick", "stopTimer2()");
+            }
+
+            function stopTimer2(){
+                clearInterval(interval);
+                specialButton.innerHTML = "# Start";
+                specialButton.setAttribute("onclick", "startTimer2()");
+            }
+        </script>
+    </body>
+</html>

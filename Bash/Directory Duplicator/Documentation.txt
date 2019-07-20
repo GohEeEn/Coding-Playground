@@ -1,0 +1,35 @@
+Assignment 4 Documentation :
+Bash
+1. $# 		- Shows the number of command-line arguments given
+2. find [opt]	- Program to find the given file (ie. regular file, directory, pipe, ...)
+		- opt [-type] : The file type 
+				d - Directory
+
+3. xargs[opt]	- Program to build and execute command lines from stdin
+		- opt [-I] replace-str : Replace the occurrences of replace-str in the initial -arguments with names read from stdin
+
+4. mkdir[opt]<dir> 
+		- Program to make directories (Default : create a new directory if not exist)
+		- opt [-p] <parent_file_name>
+			- No error if the file exists, else make it the parent directories
+
+5. file [opt][FILE]	
+		- Program to determine the file type of the given file
+		- opt [-b]	Do not prepend filenames to output lines
+		      [-f]	Read the filenames to be examined from FILE
+
+6. Substring Replacement :
+		${str_var/pattern/replacement}
+		eg. 
+			png_file=img.png
+			jpeg_file=${png_file/png/jpg} -> img.jpg
+
+7. mogrify [opt]<img.file>
+		- Modify an image file
+		- opt [-format] Image format type 
+			<replacing format> <original img.file> , eg. mogrify -format jpg image.png
+			-> Replace the image.png with jpg format file
+
+8. rm [opt]<file>
+		- Program to remove files / directories
+		- opt [-r] Remove a directory that contains other files or directories

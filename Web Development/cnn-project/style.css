@@ -1,0 +1,277 @@
+/* Styling for 1st web design project of the Udemy course */
+
+/* There are possibly default padding or margin for body elements in different browsers */
+body{ margin: 0; }
+
+#container {width: 100%;}
+
+#headerBg {  
+    width: 100%;
+    background-color: black;
+    height: 75px;
+}
+
+#interior{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#header{
+    width: 100%;
+    height: 85px;
+}
+
+#logo{
+    /* Size of the original logo pic */
+    width: 85px;
+    height: 85px;
+    background-image: url('images/cnn_logo.png');
+    float: left;
+}
+
+#top-nav{
+    width: 1015px;
+    float: left;
+    color: white;
+    height: 40px;
+    background-color: black;
+}
+
+.topNavFont{
+    font-size: 1.25em;
+    color: grey;
+    font-family: sans-serif;
+    padding-left: 15px;
+    line-height: 1px;
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 12px;
+}
+
+#bottom-nav{
+    width: 1015px;
+    float: left;
+    color: white;
+    height: 35px;
+    background-color: #ccc;
+    float: left;
+}
+
+.bottomNavFont{
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #222;
+    font-family: sans-serif;
+    padding-left: 15px;
+    line-height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 12px;
+    margin-top: 0;
+}
+
+#money{ background-color: #006598; }
+#money:hover{ color: grey; }
+
+a.header-top-links:link{ 
+    color: white;
+    text-decoration: none; 
+}
+
+a.header-bottom-links:link{
+    color: black;
+    text-decoration: none;
+}
+
+a.header-top-links:visited { color: grey; }
+a.header-bottom-links:visited { color: black; }
+
+.topNavFont:hover{
+    font-weight: bold;
+    color: white;
+}
+
+a.header-bottom-links:hover{ color: white; }
+
+#money-link{ color: white; }
+
+#live{
+    background-color: #c00;
+    float: right;
+}
+
+#topNavFloatRight{
+    float: right;
+    width: 300px;
+}
+
+.grey-font{
+    color: #ccc;
+}
+
+.topNavRight{
+    font-size: 0.9em;
+    color: #999;
+    line-height: 40px;
+    vertical-align: middle;
+    font-family: sans-serif;
+    padding-left: 15px;
+    display: inline-block;
+    padding-right: 12px;
+    float: left;
+}
+
+.searchBox{
+    background-color: #000;
+    font-size: 0.95em;
+    color: #fff;
+    line-height: 40px;
+    vertical-align: middle;
+    font-family: sans-serif;
+    padding-left: 12px;
+    display: inline-block;
+    padding-right: 12px;
+    font-weight: 400;
+    float: right;
+    background-color: #333;
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+.search{
+    background: transparent url(http://f.cl.ly/items/2a2Z0V0L0J1p3V082d3r/icon-search.png) no-repeat top left;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    position: relative;
+    height: 17px;
+    top: 10px;
+    width: 16px;
+}
+
+.searchBox input{
+    width: 130px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 35px;
+    display: inline-block;
+    float: left;
+    color: #999;
+    font-size: 0.95em;
+    background-color: #333;
+    border: 0;
+    outline: none; /* Remove the outer glow of the searchbox */
+}
+
+/* Content Styling */
+#content{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#main-left{
+    width: 27%;
+    vertical-align: top;
+    float:left;
+}
+
+.main-left-heading{
+    background-color: #f2f2f2;
+    border-bottom-width: 2px;
+    border-bottom-color: #999;
+    border-bottom-style: solid;
+    height: 37px;
+}
+
+.main-left-heading-font{
+    font-size: 1em;
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 37px;
+    vertical-align: middle;
+    padding-left: 8px;
+}
+
+.main-left-item{
+    background-color: #fff;
+    border-top-width: thin;
+    border-top-color: #ccc;
+    border-top-style: solid;
+    color: #222;
+}
+
+.main-left-item-font{
+    font-size: 0.9em;
+    font-family: sans-serif;
+    font-weight: 300;
+    padding-left: 5px;
+    width: 90%;
+}
+
+#main-right{
+    width: 71%;
+    background-color: white;
+    float: right;
+    margin-left: 10px;
+}
+
+#main-story{
+    /* Full size of the image */
+    width: 780px;
+    height: 438px;
+    background-image: url('images/sophia-robot.jpg');
+    margin-top: 16px;
+}
+
+#main-news-spacing{
+    /* 438 - 100 */
+    height: 318px;
+    background-color: transparent;
+}
+
+#main-news{
+    height: 120px;
+    vertical-align: bottom;
+    background-color: rgba(255,255,255,0.8);
+}
+
+#main-news-links{
+    width: 100% - 20px;
+    padding: 10px;
+    float: left;
+}
+
+a.big:link{
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 35px;
+    color: black;
+}
+
+a.medium:link{ 
+    font-size: 1.5em; 
+    font-family: sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 40px;
+    color: black;
+}
+
+a.small:link{
+    font-size: 0.9em; 
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 20px;
+    color: #006598;
+    display: inline-block;
+}
+
+a.big:visited { color: black; }
+a.medium:visited { color: black; }
+a.small:visited { color: #006598; }
+a.big:hover, a.medium:hover, a.small:hover{ color: #c00; }
+
+
