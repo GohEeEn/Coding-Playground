@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>JavaScript App 1 : Guess the Color !</title>
+
+        <style>
+            #ansColor{
+                height: 200px;
+                width: 200px;
+            }
+
+            #ansColorName{ display: inline-flex; }
+        </style>
+    </head>
+
+    <body>
+        <div id="inputContainer">
+            Guess the color :
+            <select name="color" id="colorInput">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+            </select>
+            <br><br>
+            <button id="guess">Guess Color</button>
+        </div>
+
+        <br>
+
+        <div id="outputContainer">
+            Final Answer : 
+            <p id="ansColorName"></p>
+            <br>
+            <div id="ansColor"></div>
+        </div>
+
+        <script>
+
+            var colors = ["red","yellow","green","blue","purple"];
+
+            document.getElementById("guess").onclick = function(){
+
+                // Get an integer, as no data type difference while var declaration
+                // Thus .floor() method required in order to get an integer
+                // Return a random number between 0 and 4
+                // random() method returns a random number from 0 (inclusive) up to 1 (exclusive)
+                // thus multiplied by 5 (excluding 5 by theory of random())
+                var ans = Math.floor(Math.random() * 5);
+
+                // debugging
+                // console.log(colors[ans], document.getElementById("colorInput").value);
+
+                // Check if the answer are correct
+                if(colors[ans] == document.getElementById("colorInput").value){
+                    alert("Congrat! You got the correct answer!");
+                }else
+                    alert("Opps... you got the wrong answer... ");
+                
+                // Display the name of color answer and set it background-color of resulting div
+                document.getElementById("ansColorName").innerHTML = colors[ans];
+                document.getElementById("ansColor").style.backgroundColor = colors[ans];
+            }
+
+        </script>
+    </body>
+</html>

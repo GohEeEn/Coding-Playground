@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>jQuery Challenge : Tab Panel</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        
+        <style>
+
+            body{
+                background: #ccc;
+                font-family: 'Times New Roman', Times, serif;
+                color: #000;
+            }
+
+            .container{ margin-top: 10px; }
+
+            .tab-panels ul{
+                margin: 0;
+                padding: 0;
+            }
+
+            .tab-panels ul li{
+                list-style-type: none;
+                display: inline-block;
+                background: #d9edf7;
+                margin: 0;
+                padding: 3px 10px;
+                border-radius: 10px 10px 0 0;
+                color: #337ab7;
+                font-weight: 200;
+            }
+
+            .tab-panels ul li:hover{
+                color: #fff;
+                background: #337ab7;
+            }
+
+            .tab-panels ul li.active{
+                color: #fff;
+                background: #337ab7;
+            }
+
+            .tab-panels .card{
+                /* Hiding other unselected cards */
+                display: none;
+                background: #337ab7;
+                padding: 30px;
+                border-radius: 0 0 15px 15px;
+                color: #fff;
+            }
+
+            .tab-panels .card.active{ display: block; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tab-panels">
+                <ul class="tabs">
+                    <li rel="panel1" class="active">panel 1</li>
+                    <li rel="panel2">panel 2</li>
+                    <li rel="panel3">panel 3</li>
+                    <li rel="panel4">panel 4</li>
+                </ul>
+
+                <div id="panel1" class="active card">
+                    This is Panel 1<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                </div>
+
+                <div id="panel2" class="card">
+                    This is Panel 2<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                </div>
+                
+                <div id="panel3" class="card">
+                    This is Panel 3<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                </div>
+
+                <div id="panel4" class="card">
+                    This is Panel 4<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                    This is some content<br>
+                </div>
+
+            </div><!-- End of tab -->
+        </div><!-- End of Container -->
+
+        <!-- Direct the path to the compressed jQuery file -->
+        <script src="../../js/jquery-3.4.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        
+        <script>
+
+            $(function(){
+                
+                $(".tab-panels .tabs li").click(function(){
+
+                    // Find out which tab is clicked
+                    var panelToDisplay = $(this).attr('rel');
+
+                    // Find out the active tab selected before and remove its active class
+                    $('.tab-panels .tabs').find("li.active").removeClass("active");
+
+                    // Giving the clicked tab with the active class
+                    $(this).addClass('active');
+
+                    // Slide the panel, which remove the previous active card and switch the new active panel/card
+                    $(".tab-panels .card.active").slideUp(300, function(){
+                        
+                        // Remove the active class of the previous active card
+                        $(this).removeClass("active");
+
+                        // Insert and display the newly active card
+                        $("#" + panelToDisplay).slideDown(300, function(){
+                            $(this).addClass("active");
+                        });
+                    });
+                });
+
+            }); // end jQuery document-ready function
+
+        </script>
+    </body>
+</html>
